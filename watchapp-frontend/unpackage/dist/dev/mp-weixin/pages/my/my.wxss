@@ -1,0 +1,57 @@
+
+.my-content {
+	background-color: #f2f2f2;
+}
+.user-info-container {
+	height: 120rpx;
+	padding: 40rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #ffffff;
+}
+.user-avatar {
+	height: 120rpx;
+	font-size: 120rpx;
+}
+.user-avatar image {
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 100%;
+}
+.username-info {
+	padding-left: 40rpx;
+	display: flex;
+	flex-direction: column;
+}
+.username-info .username {
+	font-size: 36rpx;
+	font-weight: bold;
+}
+.username-info .login {
+	font-size: 50rpx;
+}
+.menu-list-container {
+	margin-top: 20rpx;
+	background-color: #ffffff;
+}
+.menu-list-item {
+	padding: 40rpx 0;
+	margin: 0 40rpx;
+	font-size: 36rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.menu-border {
+	border-bottom: 1px solid #f2f2f2;
+}
+.menu-title {
+	padding-left: 20rpx;
+	color: #333333;
+	flex-grow: 1;
+}
+.menu-arrow {
+	width: 40rpx;
+}
+

@@ -1,0 +1,76 @@
+
+.content {
+	background-color: #F2F2F2;
+	padding: 30rpx;
+	min-height: 100vh;
+}
+.total-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.total-container text {
+	color: #666666;
+	font-size: 28rpx;
+}
+.month-selector {
+	width: 180rpx;
+	height: 50rpx;
+	padding-left: 40rpx;
+	background-color: #FFFFFF;
+	border-radius: 50rpx;
+	line-height: 50rpx;
+}
+.month-selector::after {
+	content: '▾';
+	position: relative;
+	top: -50rpx;
+	left: 140rpx;
+}
+.detail-container {
+	margin-top: 30rpx;
+	border-radius: 10rpx;
+	background-color: #FFFFFF;
+}
+.order-container {
+	height: 80rpx;
+	padding: 40rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+	border-bottom: 1px solid #f2f2f2;
+}
+.user-avatar image {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 100%;
+	border: 1px soid #f2f2f2;
+}
+.username-info {
+	padding-left: 40rpx;
+	display: flex;
+	flex-direction: column;
+}
+.username-info .username {
+	color: #333333;
+	font-size: 28rpx;
+}
+.username-info .datetime {
+	color: #999999;
+	font-size: 24rpx;
+	font-weight: bold;
+}
+.price-info {
+	text-align: right;
+	flex-grow: 1;
+	color: #009245;
+}
+.no-more-container {
+	margin-top: 20rpx;
+	text-align: center;
+	color: #999999;
+}
+

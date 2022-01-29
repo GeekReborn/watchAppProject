@@ -1,0 +1,115 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}, {
+			"path": "pages/order/order",
+			"style": {}
+		}, {
+			"path": "pages/my/my",
+			"style": {}
+		}, {
+			"path": "pages/home/home",
+			"style": {}
+		}, {
+			"path": "pages/my/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		}, 
+		
+		// {
+		// 	"path": "components/shop-item/shop-item",
+		// 	"style": {}
+		// }, 
+		
+		{
+			"path": "pages/index/shop-detail/shop-detail",
+			"style": {
+				"navigationBarTitleText": "店铺详情"
+			}
+		}, {
+			"path": "pages/index/shop-location-map/shop-location-map",
+			"style": {
+				"navigationBarTitleText": "店铺位置"
+			}
+		}, {
+			"path": "pages/order/order-info/order-info",
+			"style": {
+				"navigationBarTitleText": "订单详情",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/order/order-detail-info/order-detail-info",
+			"style": {
+				"navigationBarTitleText": "订单详情",
+				"enablePullDownRefresh": true
+			}
+		}
+	    ,{
+            "path" : "pages/order/order-appointment/order-appointment",
+            "style": {
+            	"navigationBarTitleText": "预约维修"
+            }
+        }
+        ,{
+            "path" : "pages/order/order-repair/order-repair",
+            "style" : {
+				"navigationBarTitleText": "接修单"
+			}
+        }
+        ,{
+            "path" : "pages/order/order-complete/order-complete",
+            "style" : {}
+        },{
+            "path" : "pages/order/order-rating/order-rating",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/my/add-master/add-master",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/my/master-manage/master-manage",
+            "style" : {}
+        },
+		{
+		    "path" : "pages/my/finance/finance",
+		    "style" : {
+				"navigationBarTitleText": "店铺账单"
+			}
+		}
+    ],
+	// "tabBar": {
+	// 	"list": [
+	// 		{
+	// 			"pagePath": "pages/index/index",
+	// 			"iconPath": "static/images/icons/home.png",
+	// 			"selectedIconPath": "static/images/icons/home_active.png",
+	// 			"text": "首页"
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/order/order",
+	// 			"iconPath": "static/images/icons/order.png",
+	// 			"selectedIconPath": "static/images/icons/order_active.png",
+	// 			"text": "订单"
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/my/my",
+	// 			"iconPath": "static/images/icons/mine.png",
+	// 			"selectedIconPath": "static/images/icons/mine_active.png",
+	// 			"text": "我的"
+	// 		}
+	// 	]
+	// },
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#fff"
+	}
+}

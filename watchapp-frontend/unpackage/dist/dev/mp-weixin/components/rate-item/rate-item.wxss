@@ -1,0 +1,43 @@
+
+.user-rating-container {
+	padding-top: 20rpx;
+	padding-bottom: 20rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px dashed #eeeeee;
+}
+.rating-info-container {
+	display: flex;
+	flex-direction: row;
+}
+.user-avatar {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 80rpx;
+}
+.rating-info {
+	padding-left: 20rpx;
+}
+.user-rating {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 24rpx;
+	color: #999999;
+}
+.user-rating-time {
+	padding-right: 30rpx;
+}
+.uni-rate {
+	margin-left: 30rpx;
+}
+.rating-content {
+	padding-top: 20rpx;
+}
+.rating-photo {
+	padding-top: 20rpx;
+	width: 100rpx;
+	height: 100rpx;
+}
+

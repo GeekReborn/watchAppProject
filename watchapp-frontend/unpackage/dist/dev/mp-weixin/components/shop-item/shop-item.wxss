@@ -1,0 +1,43 @@
+
+.shop-item {
+	height: 160rpx;
+	padding: 20rpx 20rpx 20rpx 0rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10rpx;
+	background-color: #ffffff;
+	border-bottom: 1px solid #f2f2f2;
+}
+.shop-icon {
+	width: 120rpx;
+	height: 120rpx;
+	background-size: auto 120rpx;
+	background-position: center;
+}
+.shop-info {
+	padding: 0 20rpx;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	justify-content: center;
+	align-items: flex-start;
+}
+.shop-name {
+	font-size: 36rpx;
+	color: #666666;
+}
+.shop-selector-info {
+	font-size: 28rpx;
+	color: #008d29;
+}
+.btn-book {
+	text-align: center;
+	width: 100rpx;
+	line-height: 50rpx;
+	border-radius: 50rpx;
+	border: 1px solid #008d29;
+	color: #008d29;
+}
+

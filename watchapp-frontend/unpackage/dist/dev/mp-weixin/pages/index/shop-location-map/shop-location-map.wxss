@@ -1,0 +1,8 @@
+
+.btn-control {
+	width: 80rpx;
+	height: 100rpx;
+	z-index: 10000;
+	position: fixed;
+}
+

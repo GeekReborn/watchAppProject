@@ -1,0 +1,308 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* search */
+.search-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding:30rpx 0 0 0;
+	background-color:#fff;
+}
+.search-icon{
+	font-size:28rpx;
+	display: inline-block;
+}
+.search-box{
+	height: 72rpx;
+	line-height: 72rpx;
+	width: 510rpx;
+	margin: auto;
+	border-radius: 60rpx;
+	border: 1rpx solid #f6f6f6;
+	background-color:#f5f5f5;
+	padding:0 30rpx;
+	font-size:28rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30rpx;
+}
+.search-input{
+	width: 450rpx;
+	margin-left: 10rpx;
+}
+/* tab */
+.tab-container{
+	background-color: #fff;
+}
+.tab-box{
+	width: 640rpx;
+	margin:auto;
+}
+.tab{
+	width: 70rpx;
+	height: 28rpx;
+	line-height: 28rpx;
+	padding: 24rpx 40rpx;
+	text-align: center;
+	font-size:32rpx;
+	margin:0 5rpx;
+	display: inline-block;
+}
+.tab-active{
+	color:#009245;
+	border-bottom:4rpx solid #009245;
+}
+/* order list */
+.order-box{
+	position: relative;
+}
+.new-notice{
+	position: absolute;
+	-webkit-transform: rotate(180deg);
+	        transform: rotate(180deg);
+	right: -4rpx;
+	top: 16rpx;
+	width: 40rpx !important;
+	height: 40rpx !important;
+	z-index:1;
+}
+.order-list-container{
+	min-height: 280rpx;
+}
+.order-container{
+	height: 150rpx;
+	background-color: #fff;
+	position:relative;
+	top: 20rpx;
+	margin-bottom: 10rpx;
+	display: flex;
+}
+.shop-logo{
+	height: 100rpx;
+	width: 100rpx;
+	margin: 25rpx 30rpx 25rpx 40rpx;
+	display: inline-block;
+	float: left;
+}
+.order-info{
+	display: inline-block;
+	float: left;
+	width: 500rpx;
+	margin: 20rpx 0;
+	flex: 1;
+	padding-right: 40rpx;
+}
+.order-info-box{
+	height: 56rpx;
+	line-height: 56rpx;
+}
+.order-name,.order-statu{
+	font-size: 32rpx;
+	display: inline-block;
+}
+.order-name{
+	float: left;
+	max-width: 300rpx;
+}
+.order-statu{
+	float: right;
+	color:#009245;
+	height: 56rpx;
+	line-height: 56rpx;
+	max-width: 200rpx;
+}
+.order-price{
+	display: inline-block;
+}
+.order-price{
+	
+	font-size: 28rpx;
+	float: left;
+	max-width: 200rpx;
+}
+/* split */
+.split-outbox{
+	padding: 0 40rpx;
+	background-color: #fff;
+}
+.split-inline{
+	height: 12rpx;
+	border-bottom: 1rpx solid #eee;
+}
+/* order footer */
+.order-footer{
+	display: flex;
+	background-color: #fff;
+	padding: 0 40rpx;
+}
+.order-no{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 24rpx;
+	flex: 1;
+}
+.order-time{
+	font-size: 24rpx;
+	float: right;
+	height: 80rpx;
+	line-height: 80rpx;
+	max-width: 300rpx;
+	text-align: right;
+}
+/* 底部加载提示 */
+.loading-tip{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 28rpx;
+	text-align: center;
+	color: #C0C0C0;
+}
+/* 底部模拟tabBar高度 */
+.footer-box{
+	height: 110rpx;
+}
+

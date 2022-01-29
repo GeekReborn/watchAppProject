@@ -1,0 +1,1 @@
+<view class="content"><image class="logo" src="/static/logo.png"></image><button open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['login',['$event']]]]]}}" bindgetuserinfo="__e">登录授权</button></view>

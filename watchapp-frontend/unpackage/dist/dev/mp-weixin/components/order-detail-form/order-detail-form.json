@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "custom-select": "/components/custom-select/custom-select"
+  }
+}

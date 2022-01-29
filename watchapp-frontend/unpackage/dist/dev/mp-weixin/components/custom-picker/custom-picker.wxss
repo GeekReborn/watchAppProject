@@ -1,0 +1,65 @@
+
+.custom-picker-mask {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+.custom-picker-content{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	transition: all 0.3s ease;
+	-webkit-transform: translateY(100%);
+	        transform: translateY(100%);
+	z-index: 3000;
+}
+.custom-picker-cc{
+	/* display: flex; */
+	padding: 18rpx 30rpx;
+	background-color: #fff;
+	position: relative;
+	/* text-align: center; */
+	font-size: 32rpx;
+}
+.custom-picker-cancel,.custom-picker-confirm{
+	display: inline-block;
+	font-size:32rpx;
+	padding:10rpx 20rpx; 
+	position:relative
+}
+.custom-picker-cancel{
+	text-align: left;
+	color: #888;
+}
+.custom-picker-confirm{
+	text-align: right;
+	float:right
+}
+.custom-picker-view-show {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+.custom-picker-view {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 476rpx;
+    background-color: rgba(255, 255, 255, 1);
+}
+.picker-item {
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 32rpx;
+}
+.custom-picker-indicator{
+	height:80rpx;
+	width: 200rpx;
+	margin-left:calc(50% - 100rpx);
+}
+

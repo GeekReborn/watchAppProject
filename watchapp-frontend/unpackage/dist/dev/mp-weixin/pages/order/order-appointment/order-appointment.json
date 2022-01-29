@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "预约维修",
+  "usingComponents": {
+    "order-detail-shop": "/components/order-detail-shop/order-detail-shop",
+    "custom-select": "/components/custom-select/custom-select",
+    "sunui-upimg": "/components/sunui-upimg/sunui-upimg"
+  }
+}

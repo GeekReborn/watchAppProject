@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tki-qrcode": "/components/tki-qrcode/tki-qrcode",
+    "uni-steps": "/components/uni-steps/uni-steps",
+    "image-text": "/components/image-text/image-text"
+  }
+}

@@ -1,0 +1,13 @@
+
+.form-container {
+	padding: 40rpx;
+}
+.add-btn {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background-color: #009245;
+	color: #FFFFFF;
+	border-radius: 0;
+}
+

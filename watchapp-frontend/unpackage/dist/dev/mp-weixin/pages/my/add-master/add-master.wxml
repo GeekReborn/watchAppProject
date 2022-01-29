@@ -1,0 +1,1 @@
+<view><form data-event-opts="{{[['submit',[['addMaster',['$event']]]]]}}" bindsubmit="__e"><view class="form-container"><text>师傅手机号：</text><input name="phone" placeholder="请输入手机号"/></view><button class="add-btn" form-type="submit">添加师傅</button></form></view>

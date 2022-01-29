@@ -1,0 +1,57 @@
+api-prefix: /api
+open-prefix: /open
+
+auth-url: http://localhost:90/oauth/token
+wx:
+  appid: wx188e0546b90e3d04
+  secret: fc9469827956a31d7adfc7b7d795e9c3
+
+server:
+  port: 90
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/watchApp?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,slf4j
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#    initialSize: 1
+#    minIdle: 3
+#    maxActive: 20
+#    maxWait: 60000
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 30000
+#    validationQuery: select 'x'
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    maxPoolPreparedStatementPerConnectionSize: 20
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+    enabled: true
+    mode: LEGACYHTML5
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:sss
+#  servlet:
+#    multipart:
+#      max-file-size: 2MB

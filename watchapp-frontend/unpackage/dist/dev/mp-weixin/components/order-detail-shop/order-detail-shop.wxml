@@ -1,0 +1,1 @@
+<view class="res-tittle"><view class="shop-name">{{shop.name||shopname||shopInfo.name||'店铺名称'}}</view><view class="shop-adress-container"><view class="watch-icons icon-location 	landmark"></view><view class="shop-adress">{{shop.locationText||locationtext||shopInfo.locationText||'店铺位置'}}</view></view></view>

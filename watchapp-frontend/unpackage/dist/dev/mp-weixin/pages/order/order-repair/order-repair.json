@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "接修单",
+  "usingComponents": {
+    "order-detail-shop": "/components/order-detail-shop/order-detail-shop",
+    "custom-select": "/components/custom-select/custom-select",
+    "image-text": "/components/image-text/image-text",
+    "upload-image": "/components/upload-image/upload-image",
+    "sunui-upimg": "/components/sunui-upimg/sunui-upimg"
+  }
+}

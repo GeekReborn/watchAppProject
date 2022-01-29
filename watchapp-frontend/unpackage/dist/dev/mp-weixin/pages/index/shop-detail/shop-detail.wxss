@@ -1,0 +1,101 @@
+
+.watch-icons {
+	color: #009245;
+}
+.container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #eee;
+}
+.img-banner {
+	width: 100%;
+	height: 300rpx;
+	background-image: url('http://lc-3uxiAoex.cn-n1.lcfile.com/1dbacee741ba8eafff1a/banner-14.jpg');
+	background-size: cover;
+	background-position: center;
+}
+.shop-info {
+	padding: 0 60rpx;
+	margin-top: 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #ffffff;
+}
+.shop-name-info {
+	width: 100%;
+	height: 90rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.shop-name {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #333333;
+}
+.shop-volume {
+	font-size: 28rpx;
+	color: #999999;
+}
+.shop-contact-info {
+	width: 100%;
+	height: 90rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #eeeeee;
+}
+.info-label {
+	width: 80rpx;
+	color: #008d29;
+	font-size: 32rpx;
+}
+.info-content {
+	font-size: 28rpx;
+	flex: 1;
+}
+.booking-btn {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 100rpx;
+	border-radius: 0;
+	border: 0;
+}
+button[type=primary] {
+	color: #fff;
+	background-color: #008d29;
+}
+.shop-rating {
+	padding: 20rpx 60rpx;
+	margin-top: 20rpx;
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
+	align-items: flex-start;
+}
+.rating-title {
+	font-size: 32rpx;
+	line-height: 2em;
+	color: #008D29;
+}
+.shop-rating-tags {
+	margin-top: 20rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.tag-diy {
+	padding-right: 20rpx;
+	padding-bottom: 20rpx;
+}
+.evaluation-list {
+	width: 100%;
+	padding-bottom: 120rpx;
+}
+

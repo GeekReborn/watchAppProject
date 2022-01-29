@@ -1,0 +1,30 @@
+
+.problem {
+	margin-top: 30rpx;
+}
+.bottom-spilt {
+	margin-top: 160rpx;
+	min-height: 1rpx;
+}
+.price-label {
+	width: 150rpx;
+	font-weight: bold;
+}
+.price-input {
+	width: 360rpx;
+	text-align: right;
+	font-size: 30rpx;
+	padding-right: 20rpx;
+}
+.price-unit {
+	width: 100rpx;
+}
+.tip {
+	height: 100rpx;
+	line-height: 100rpx;
+	padding: 0 40rpx;
+	color: #e8462f;
+	font-size: 30rpx;
+	/* margin-bottom:140rpx; */
+}
+

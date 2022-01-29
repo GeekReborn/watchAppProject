@@ -1,0 +1,178 @@
+
+.container {
+	background-color: #eee;
+}
+.res-tittle {
+	text-align: center;
+	background-color: #FFFFFF;
+	height: 100rpx;
+	padding-top: 20rpx;
+	padding-bottom: 10rpx;
+}
+.shop-adress-container {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+.shop-name {
+	font-size: 30rpx;
+	font-weight: bold;
+	margin-bottom: 10rpx;
+}
+.shop-adress {
+	font-size: 26rpx;
+}
+.landmark {
+	font-size: 26rpx;
+	color: #009245;
+}
+.order-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	font-size: 32rpx;
+	margin-top: 20rpx;
+	background-color: #FFFFFF;
+}
+.timeline {
+	width: 86%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	padding-bottom: 40rpx;
+}
+.order-label-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+	height: 50rpx;
+	padding: 20rpx;
+}
+.order-content {
+	color: #009245;
+}
+.order-content-icon {
+	color: #009245;
+	font-size: 28rpx;
+}
+.border-top {
+	border-top: #DDDDDD 1px solid;
+}
+.border-bottom {
+	border-bottom: #DDDDDD 1px solid;
+}
+.image-desc-info {}
+
+/*图片上传*/
+.upload-image-box {
+	background-color: #fff;
+	margin-top: 20rpx;
+}
+.bottom-spilt {
+	margin-top: 160rpx;
+	min-height: 1rpx;
+}
+.btn {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 140rpx;
+	line-height: 140rpx;
+	border-radius: 0;
+	/* border: 0; */
+}
+.btn.btn-half {
+	width: 50%;
+}
+.btn.btn-right {
+	left: 50%;
+}
+button[type=primary] {
+	color: #fff;
+	background-color: #009245;
+	border-color: #009245;
+}
+button[type=default] {
+	color: #666;
+	background-color: #fff;
+}
+button::after {
+	border: 0;
+}
+.qrimg {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 80rpx;
+}
+.qrcode-prompt {
+	padding: 20rpx 0rpx;
+	font-size: 28rpx;
+	color: #808080
+}
+
+/* .two-bar-codes {
+	height: 240rpx;
+	width: 240rpx;
+	margin: 48rpx -100%;
+}
+
+.two-bar-codes-container {
+	background-color: #FFFFFF;
+	text-align: center;
+}
+
+.two-bar-prompt {
+	padding: 20rpx 0rpx;
+	font-size: 28rpx;
+	color: #808080
+}
+
+.contacts-phone {
+	font-size: 28rpx;
+	color: #808080;
+	text-align: center;
+	line-height: 80rpx;
+	background-color: #F8F8F8;
+	height: 80rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+
+
+.qrimg-i {
+	margin-top: 80rpx;
+}
+
+.prompting {
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+	background-color: #FFFFFF;
+	font-size: 36rpx;
+	text-align: center;
+	line-height: 100rpx;
+	color: #20A05D;
+	height: 100rpx;
+}
+
+.schedule-container {
+	margin: 20rpx 0rpx;
+	background-color: #FFFFFF;
+	width: 100%;
+}
+
+.schedule-title {
+	margin-left: 130rpx;
+}
+
+.schedule-content {
+	margin-right: 160rpx;
+} */
+

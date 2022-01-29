@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "order-detail-shop": "/components/order-detail-shop/order-detail-shop",
+    "upload-image": "/components/upload-image/upload-image"
+  }
+}

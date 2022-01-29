@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "order-detail-shop": "/components/order-detail-shop/order-detail-shop",
+    "order-detail-form": "/components/order-detail-form/order-detail-form",
+    "image-text": "/components/image-text/image-text",
+    "order-detail-confirm-price": "/components/order-detail-confirm-price/order-detail-confirm-price"
+  }
+}
