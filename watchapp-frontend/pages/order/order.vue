@@ -57,6 +57,7 @@
 		components: {
 			uniSearchBar
 		},
+		
 		data() {
 			return {
 				currentTab: 0,

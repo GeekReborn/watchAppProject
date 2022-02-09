@@ -12,7 +12,10 @@ var defaultSetting = {
 	data: {},
 	method: REQUEST_METHOD.GET,
 	header: {
-		'content-type': 'application/x-www-form-urlencoded'
+		'content-type': 'application/x-www-form-urlencoded',
+		// 'Access-Control-Allow-Headers' : 'appId' ,
+		// 'Access-Control-Allow-Methods' : 'POST,GET,OPTIONS' ,
+		// 'Access-Control-Max-Age' : 86400,
 	},
 	dataType: 'json',
 	isLocalResult: true,		// RestResult, statusCode == 200 && data.code == 200

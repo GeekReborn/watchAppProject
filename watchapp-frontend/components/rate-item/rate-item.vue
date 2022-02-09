@@ -1,7 +1,7 @@
 <template>
 	<view class="user-rating-container">
 		<view class="rating-info-container">
-			<image class="user-avatar" :src="rateItem.avatarUrl"></image>
+			<image v-if='rateItem.avatarUrl' class="user-avatar" :src="rateItem.avatarUrl"></image>
 			<view class="rating-info">
 				<view class="user-name">{{rateItem.username}}</view>
 				<view class="user-rating">

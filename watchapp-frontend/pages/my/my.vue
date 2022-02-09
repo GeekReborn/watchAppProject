@@ -46,7 +46,11 @@
 		computed: {
 			phone() {
 				let phone = this.userInfo.phone
-				return phone.substring(0, 3) + '****' + phone.substring(7);
+				if(phone == null){
+					return phone = '**********';
+				}else{
+					return phone.substring(0, 3) + '****' + phone.substring(7);
+				}
 			}
 		},
 		created() {

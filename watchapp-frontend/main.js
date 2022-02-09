@@ -16,9 +16,12 @@ WebSocketUtils.webSocketSetting.domain = 'ws://localhost:90/websocket/';
 // wss ==> https
 
 AV.init({
-	appId: 'O7uW3C5twXED3J6582L9hifo-gzGzoHsz',
-	appKey: 'eA5pOdESnG1PkA2qt6wKQkv9',
-	serverURLs: 'https://o7uw3c5t.lc-cn-n1-shared.com'
+	// appId: 'O7uW3C5twXED3J6582L9hifo-gzGzoHsz',
+	// appKey: 'eA5pOdESnG1PkA2qt6wKQkv9',
+	// serverURLs: 'https://o7uw3c5t.lc-cn-n1-shared.com',
+	appId: 'UubPz7b2SoPjk8X22Mtn9xud-gzGzoHsz',
+	appKey: '1o9L1KE0BPEXsKdhLQXYTBvX',
+	serverURLs: 'https://uubpz7b2.lc-cn-n1-shared.com'
 })
 
 Vue.config.productionTip = false

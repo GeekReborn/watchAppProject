@@ -3,6 +3,8 @@
 		<view :class="{'custom-picker-mask':pickerView}" v-on:click.stop="maskClick" catchtouchmove="true"></view>
 		<view class="custom-picker-content" :class="{'custom-picker-view-show':pickerView}" >
 			<view class="custom-picker-cc" catchtouchmove>
+<!-- 				<view class="custom-picker-cancel" v-on:click.stop="cancelHandle">取消</view>
+				<view class="custom-picker-confirm" v-if="isClick" :style="'color:'+themeColor+';'" v-on:click.stop="confirmHandle">确定</view> -->
 				<view class="custom-picker-cancel" v-on:click.stop="cancelHandle">取消</view>
 				<view class="custom-picker-confirm" v-if="isClick" :style="'color:'+themeColor+';'" v-on:click.stop="confirmHandle">确定</view>
 				<view class="custom-picker-confirm" v-if="!isClick" style="color:#888;">确定</view>

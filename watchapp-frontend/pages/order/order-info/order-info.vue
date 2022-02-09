@@ -155,7 +155,7 @@
 			this.order.id = param.orderId;
 			this.order.orderStep = param.orderStep;
 			this.shop.id = param.shopId;
-			this.initPageData();
+			// this.initPageData();
 		},
 		onShow() {
 			this.initPageData();
@@ -175,6 +175,7 @@
 				that.loadShopData();
 				that.$login.checkTokenValidity()
 					.then((res) => {
+						// debugger
 						that.loadOrderInfo();
 						that.loadOrderSteps();
 					})
@@ -319,6 +320,7 @@
 				let order = this.order;
 				let orderInfo = JSON.stringify(order);
 				let shopInfo = JSON.stringify(this.shop);
+				// debugger
 				that.$login.checkTokenValidity()
 					.then(() => {
 						uni.navigateTo({
@@ -536,6 +538,7 @@
 				} else if (notifyCustomerId && isMaster) {
 					delete data.notifyShopId;
 				}
+				// debugger
 				this.$websocket.sendData(data)
 			},
 			orderSocketHandle(res){

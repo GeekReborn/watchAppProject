@@ -29,9 +29,9 @@
 			<textarea v-model="form.customerProfile" name="problemDescText" :style="'width: 600rpx;height:auto;'" class="problem-desc theme-color"
 			 @blur="blurEventHandle" auto-height maxlength="255" placeholder="请输入问题描述" placeholder-class="placeholder-text"
 			 @focus="focusEventHandle"></textarea>
-<!-- 			<view class="form-container">
+			<view class="form-container">
 				<sunui-upimg @change="uploadImage" :upload_auto="true" :upload_count="1" ref="upload"></sunui-upimg>
-			</view> -->
+			</view>
 		</view>
 
 		<button type="primary" class="booking-btn" @click="orderClickHandle">确认预约</button>
@@ -97,8 +97,8 @@
 			},
 		},
 		methods: {
-			verification: function(e) {
-				var val = e
+			verification (content) {
+				var val = content.toString();
 				var ranges = [
 					'\ud83c[\udf00-\udfff]',
 					'\ud83d[\udc00-\ude4f]',

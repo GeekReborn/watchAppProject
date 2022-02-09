@@ -11,7 +11,8 @@
 .img-banner {
 	width: 100%;
 	height: 300rpx;
-	background-image: url('http://lc-3uxiAoex.cn-n1.lcfile.com/1dbacee741ba8eafff1a/banner-14.jpg');
+	/* background-image: url('http://lc-3uxiAoex.cn-n1.lcfile.com/1dbacee741ba8eafff1a/banner-14.jpg'); */
+	background-image: url('https://scpic.chinaz.net/files/pic/pic9/202112/hpic4860.jpg');
 	background-size: cover;
 	background-position: center;
 }

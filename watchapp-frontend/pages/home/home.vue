@@ -13,10 +13,10 @@
 				<view class="shop-title">热门店铺</view>
 				<view class="shop-selector">
 					<!-- <view class="btn-selector btn-selector-active" :class="divClass" @click="switchSelector" data-order="distance"> -->
-					<view class="btn-selector" :class="{'btn-selector-active': divclass1}" @click="switchSelector(event, 'distance')" data-order="distance">
+					<view class="btn-selector" :class="{'btn-selector-active': order=='distance'}" @click="switchSelector" data-order="distance">
 						<text>距离</text>
 					</view>
-					<view class="btn-selector" :class="{'btn-selector-active': divclass2}" @click="switchSelector(event, 'rate')" data-order="favorable_rate">
+					<view class="btn-selector" :class="{'btn-selector-active': order=='favorable_rate'}" @click="switchSelector" data-order="favorable_rate">
 						<text>好评</text>
 					</view>
 				</view>
@@ -30,7 +30,7 @@
 			</view>
 		</view>
 		<!-- <navigator url="/pages/my/login/login"><button>去登录</button></navigator> -->
-		<button @click="neetToLogin">需要登录权限的功能</button>
+		<!-- <button @click="neetToLogin">需要登录权限的功能</button> -->
 	</view>
 </template>
 
@@ -45,8 +45,6 @@
 		data() {
 			return {
 				isActive:true,
-				divclass1:true,
-				divclass2:false,
 				bannerList: [
 					// {
 					// 	id: 1,
@@ -73,16 +71,20 @@
 			}
 		},
 		created() {
+			this.initLocation()
 			this.loadBanner()
 			this.loadShopList()
 		},
 		methods: {
 			orderShop(shop){
-				// console.log('orderShop......', shop)
+				console.log('orderShop......', shop)
+				// var that = this;
+				// debugger
 				this.$login.checkTokenValidity()
 				.then(() => {
 					// console.log('权限没问题，开始做')
 					shop = JSON.stringify(shop)
+					// debugger
 					uni.navigateTo({
 						url: `../order/order-appointment/order-appointment?shop=${shop}`
 					})
@@ -122,15 +124,18 @@
 				})
 			},
 			initLocation() {
+				// debugger
 				var that = this;
 				uni.authorize({
 				    scope: 'scope.userLocation',
 				    success() {
 				        uni.getLocation({
 				            type: 'gcj02',
+							isHighAccuracy:true,
 				            success: function (res) {
 				        		that.location.latitude = res.latitude;
 				        		that.location.longitude = res.longitude;
+								// debugger
 								console.log('my location:' + res.latitude + ',' + res.longitude)
 								that.loadShopList(that.shopListPager.currentPage)
 				            }
@@ -141,6 +146,7 @@
 			loadShopList(currentPage) {
 				console.log('go to loadShopList')
 				let that = this;
+				// debugger
 				that.loadMoreStatus = 'loading';
 				// setTimeout(function() {
 					// console.log('延迟5秒来看一下加载中的效果')
@@ -185,15 +191,7 @@
 				}
 			},
 			switchSelector(event, key) {
-				debugger
-				if(key=='distance'){
-					this.divclass1 = true;
-					this.divclass2 = false;
-				}else{
-					this.divclass1 = false;
-					this.divclass2 = true;
-				}
-				
+				// debugger
 				let order = event.currentTarget.dataset.order;
 				this.order = order;
 				this.shopListPager.currentPage = 1;

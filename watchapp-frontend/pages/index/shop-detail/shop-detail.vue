@@ -1,6 +1,7 @@
 <template>
 	<view class="container">
-		<view class="img-banner" :style="{backgroundImage: 'url('+shopInfo.shopImage+')'}"></view>
+		<view v-if = 'shopInfo.shopImage' class="img-banner" :style="{backgroundImage: 'url('+shopInfo.shopImage+')'}"></view>
+		<!-- <view class="img-banner" :style="{backgroundImage: 'url(https://scpic.chinaz.net/files/pic/pic9/202112/hpic4860.jpg)'}"></view> -->
 		<view class="shop-info">
 			<view class="shop-name-info">
 				<text class="shop-name">{{shopInfo.name}}</text>
@@ -39,7 +40,7 @@
 				<uni-load-more :status="loadMoreStatus" showIcon="true" :content-text="loadMoreText"></uni-load-more>
 			</view>
 		</view>
-		<button type="primary" class="booking-btn" @click="orderClickHandle">预约</button>
+		<button type="primary" class="booking-btn" @click="orderClickHandle(shopInfo)">预约</button>
 	</view>
 
 </template>
@@ -76,62 +77,64 @@
 					contentrefresh: '正在加载...',
 					contentnomore: '没有更多数据了'
 				},
-				rateData: [{
-					"id": 27,
-					"orderId": 284,
-					"star": 2,
-					"comment": "还OK啦",
-					"repairItemPhoto": "http://lc-3uxiaoex.cn-n1.lcfile.com/508dcf39f0ed06fdfb9a/IMG_3152.jpeg",
-					"createDatetime": "2019-09-04 17:20:043",
-					"createBy": 38,
-					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/1yzTKJKIfurhDI29RqibEicNOoH0WiaCuKb6jWppVu4uzWovO0d1ICAwuW4rB4zfUxVvGHfNuxXLHu44t3yBkgbicQ/132",
-					"username": "Bee",
-					"shopId": 7
-				}, {
-					"id": 26,
-					"orderId": 283,
-					"star": 1,
-					"comment": "差",
-					"repairItemPhoto": null,
-					"createDatetime": "2019-09-04 16:53:058",
-					"createBy": 37,
-					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJOLwsnM32ibwcmgnRhXRzMVlUiaFYkEFQFbYLRic17QA9KMSJJicab42r3cmkEbs7nmm18Y14M8MDGqg/132",
-					"username": "吴义增",
-					"shopId": 7
-				}, {
-					"id": 25,
-					"orderId": 280,
-					"star": 5,
-					"comment": "不错",
-					"repairItemPhoto": "http://lc-3uxiaoex.cn-n1.lcfile.com/508dcf39f0ed06fdfb9a/IMG_3152.jpeg",
-					"createDatetime": "2019-09-04 15:17:059",
-					"createBy": 39,
-					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJOLwsnM32ibwcmgnRhXRzMVlUiaFYkEFQFbYLRic17QA9KMSJJicab42r3cmkEbs7nmm18Y14M8MDGqg/132",
-					"username": "吴义增",
-					"shopId": 7
-				}, {
-					"id": 24,
-					"orderId": 274,
-					"star": 3,
-					"comment": "一般般",
-					"repairItemPhoto": null,
-					"createDatetime": "2019-09-04 10:44:035",
-					"createBy": 37,
-					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/1yzTKJKIfurhDI29RqibEicNOoH0WiaCuKb6jWppVu4uzWovO0d1ICAwuW4rB4zfUxVvGHfNuxXLHu44t3yBkgbicQ/132",
-					"username": "Bee",
-					"shopId": 7
-				}, {
-					"id": 23,
-					"orderId": 277,
-					"star": 5,
-					"comment": "环境特别好，师傅人也很好，不错",
-					"repairItemPhoto": "http://lc-3uxiaoex.cn-n1.lcfile.com/508dcf39f0ed06fdfb9a/IMG_3152.jpeg",
-					"createDatetime": "2019-09-04 10:33:025",
-					"createBy": 36,
-					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/1yzTKJKIfurhDI29RqibEicNOoH0WiaCuKb6jWppVu4uzWovO0d1ICAwuW4rB4zfUxVvGHfNuxXLHu44t3yBkgbicQ/132",
-					"username": "Bee",
-					"shopId": 7
-				}]
+				rateData: [
+				// 	{
+				// 	"id": 27,
+				// 	"orderId": 284,
+				// 	"star": 2,
+				// 	"comment": "还OK啦",
+				// 	"repairItemPhoto": "http://lc-3uxiaoex.cn-n1.lcfile.com/508dcf39f0ed06fdfb9a/IMG_3152.jpeg",
+				// 	"createDatetime": "2019-09-04 17:20:043",
+				// 	"createBy": 38,
+				// 	"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/1yzTKJKIfurhDI29RqibEicNOoH0WiaCuKb6jWppVu4uzWovO0d1ICAwuW4rB4zfUxVvGHfNuxXLHu44t3yBkgbicQ/132",
+				// 	"username": "Bee",
+				// 	"shopId": 7
+				// }, {
+				// 	"id": 26,
+				// 	"orderId": 283,
+				// 	"star": 1,
+				// 	"comment": "差",
+				// 	"repairItemPhoto": null,
+				// 	"createDatetime": "2019-09-04 16:53:058",
+				// 	"createBy": 37,
+				// 	"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJOLwsnM32ibwcmgnRhXRzMVlUiaFYkEFQFbYLRic17QA9KMSJJicab42r3cmkEbs7nmm18Y14M8MDGqg/132",
+				// 	"username": "吴义增",
+				// 	"shopId": 7
+				// }, {
+				// 	"id": 25,
+				// 	"orderId": 280,
+				// 	"star": 5,
+				// 	"comment": "不错",
+				// 	"repairItemPhoto": "http://lc-3uxiaoex.cn-n1.lcfile.com/508dcf39f0ed06fdfb9a/IMG_3152.jpeg",
+				// 	"createDatetime": "2019-09-04 15:17:059",
+				// 	"createBy": 39,
+				// 	"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJOLwsnM32ibwcmgnRhXRzMVlUiaFYkEFQFbYLRic17QA9KMSJJicab42r3cmkEbs7nmm18Y14M8MDGqg/132",
+				// 	"username": "吴义增",
+				// 	"shopId": 7
+				// }, {
+				// 	"id": 24,
+				// 	"orderId": 274,
+				// 	"star": 3,
+				// 	"comment": "一般般",
+				// 	"repairItemPhoto": null,
+				// 	"createDatetime": "2019-09-04 10:44:035",
+				// 	"createBy": 37,
+				// 	"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/1yzTKJKIfurhDI29RqibEicNOoH0WiaCuKb6jWppVu4uzWovO0d1ICAwuW4rB4zfUxVvGHfNuxXLHu44t3yBkgbicQ/132",
+				// 	"username": "Bee",
+				// 	"shopId": 7
+				// }, {
+				// 	"id": 23,
+				// 	"orderId": 277,
+				// 	"star": 5,
+				// 	"comment": "环境特别好，师傅人也很好，不错",
+				// 	"repairItemPhoto": "http://lc-3uxiaoex.cn-n1.lcfile.com/508dcf39f0ed06fdfb9a/IMG_3152.jpeg",
+				// 	"createDatetime": "2019-09-04 10:33:025",
+				// 	"createBy": 36,
+				// 	"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/1yzTKJKIfurhDI29RqibEicNOoH0WiaCuKb6jWppVu4uzWovO0d1ICAwuW4rB4zfUxVvGHfNuxXLHu44t3yBkgbicQ/132",
+				// 	"username": "Bee",
+				// 	"shopId": 7
+				// }
+				]
 			}
 		},
 		onLoad(param) {
@@ -160,6 +163,7 @@
 					})
 					.then((res) => {
 						that.shopInfo = res.data.data
+						// debugger
 					})
 					.catch((res) => {
 						this.$requestUtils.getErrorMessage('获取店铺信息失败。')
@@ -191,7 +195,7 @@
 					})
 					.then((res) => {
 						console.log('res', res)
-						debugger
+						// debugger
 						that.filterCount = res.data.data;
 					})
 					.catch((res) => {
@@ -199,7 +203,25 @@
 					})
 			},
 
-			orderClickHandle(event) {
+			orderClickHandle(shop) {
+				// debugger
+				let that = this;
+				that.$login.checkTokenValidity()
+				.then(() => {
+					// console.log('权限没问题，开始做')
+					shop = JSON.stringify(shop)
+					// s
+					uni.navigateTo({
+						url: `/pages/order/order-appointment/order-appointment?shop=${shop}`
+					})
+				})
+				.catch(() => {
+					debugger
+					// console.log('没权限，做不了')
+					this.$msg.showMessage('请先登录');
+				})
+				
+				// this.$emit('order-event',this.shopInfo);
 				console.log('orderClickHandle...')
 			},
 			changeTag(currentTag) {
@@ -225,7 +247,7 @@
 						}
 					})
 					.then((res) => {
-						debugger
+						// debugger
 						if (that.pager.currentPage == 0) {
 							this.rateList = res.data.data;
 							// that.rateList = res.data.data;
@@ -269,7 +291,8 @@
 	.img-banner {
 		width: 100%;
 		height: 300rpx;
-		background-image: url('http://lc-3uxiAoex.cn-n1.lcfile.com/1dbacee741ba8eafff1a/banner-14.jpg');
+		/* background-image: url('http://lc-3uxiAoex.cn-n1.lcfile.com/1dbacee741ba8eafff1a/banner-14.jpg'); */
+		background-image: url('https://scpic.chinaz.net/files/pic/pic9/202112/hpic4860.jpg');
 		background-size: cover;
 		background-position: center;
 	}

@@ -225,7 +225,7 @@
 				this.order[position] = e[0]
 			},
 			orderClickHandle(e) {
-				console.log('orderClickHandle', e)
+				// console.log('orderClickHandle', e)
 				if (this.disabled) {
 					return 0;
 				}
@@ -241,6 +241,7 @@
 				var that = this;
 				var orderId = this.order.id;
 				that.$login.checkTokenValidity().then((res) => {
+					// debugger
 					that.$api.apiPost({
 						url: `/api/order/${orderId}/repair/accept`,
 						data: postData
@@ -257,6 +258,7 @@
 						})
 						that.toOrderDetail(order.id, order.orderNo, order.orderStep, order.shopId)
 					}).catch((res) => {
+						// debugger
 						console.log('请求fail！', res)
 						that.$msg.showMessage(res.data.msg || "请求失败！")
 						that.disabled = false;
@@ -270,40 +272,40 @@
 			},
 			checkFormData(data) {
 				console.log('checkFormData...')
-				if (!data.customerName) {
-					this.$msg.showMessage("客户姓名不能为空")
-					return false;
-				} else if (!data.customerPhone) {
-					this.$msg.showMessage("客户手机号不能为空")
-					return false;
-				} else if (!RegExp(/^\d{11}$/).test(data.customerPhone)) {
-					this.$msg.showMessage("客户手机号不正确")
-					return false;
-				} else if (data.purchaseTime == "0-01 00:00:00" || data.purchaseTime == "-01 00:00:00") {
-					this.$msg.showMessage("购买日期不能为空")
-					return false;
-				} else if (data.tablehandleButton == "") {
-					this.$msg.showMessage("表把按钮情况不能为空")
-					return false;
-				} else if (!data.positiveItemPhoto || !data.positiveItemDesc) {
-					this.$msg.showMessage("正面图片或者正面问题描述不能为空")
-					return false;
-				} else if (!data.backItemPhoto || !data.backItemDesc) {
-					this.$msg.showMessage("背面图片或者背面问题描述不能为空")
-					return false;
-				} else if (!data.sideItemPhoto || !data.sideItemDesc) {
-					this.$msg.showMessage("侧面图片或者侧面问题描述不能为空")
-					return false;
-				} else if (!data.problemPhoto || !data.problemDescription) {
-					this.$msg.showMessage("故障面图片或者故障问题描述不能为空")
-					return false;
-				} else if (!data.payPrice) {
-					this.$msg.showMessage("我的报价不能为空")
-					return false;
-				} else if (!RegExp(/(^(([1-9]\d*)|([0-9]\d*\.\d?[1-9]{1}))$)/).test(data.payPrice)) {
-					this.$msg.showMessage("请输入正确的价格")
-					return false;
-				}
+				// if (!data.customerName) {
+				// 	this.$msg.showMessage("客户姓名不能为空")
+				// 	return false;
+				// } else if (!data.customerPhone) {
+				// 	this.$msg.showMessage("客户手机号不能为空")
+				// 	return false;
+				// } else if (!RegExp(/^\d{11}$/).test(data.customerPhone)) {
+				// 	this.$msg.showMessage("客户手机号不正确")
+				// 	return false;
+				// } else if (data.purchaseTime == "0-01 00:00:00" || data.purchaseTime == "-01 00:00:00") {
+				// 	this.$msg.showMessage("购买日期不能为空")
+				// 	return false;
+				// } else if (data.tablehandleButton == "") {
+				// 	this.$msg.showMessage("表把按钮情况不能为空")
+				// 	return false;
+				// } else if (!data.positiveItemPhoto || !data.positiveItemDesc) {
+				// 	this.$msg.showMessage("正面图片或者正面问题描述不能为空")
+				// 	return false;
+				// } else if (!data.backItemPhoto || !data.backItemDesc) {
+				// 	this.$msg.showMessage("背面图片或者背面问题描述不能为空")
+				// 	return false;
+				// } else if (!data.sideItemPhoto || !data.sideItemDesc) {
+				// 	this.$msg.showMessage("侧面图片或者侧面问题描述不能为空")
+				// 	return false;
+				// } else if (!data.problemPhoto || !data.problemDescription) {
+				// 	this.$msg.showMessage("故障面图片或者故障问题描述不能为空")
+				// 	return false;
+				// } else if (!data.payPrice) {
+				// 	this.$msg.showMessage("我的报价不能为空")
+				// 	return false;
+				// } else if (!RegExp(/(^(([1-9]\d*)|([0-9]\d*\.\d?[1-9]{1}))$)/).test(data.payPrice)) {
+				// 	this.$msg.showMessage("请输入正确的价格")
+				// 	return false;
+				// }
 				return true;
 			},
 			getFormData: function() {
@@ -320,6 +322,7 @@
 				order.entrustedMail = this.$refs.customerShipping.defaultText
 				order.insure = this.$refs.insurance_select.defaultValue
 				order.purchaseDate = that.$refs.buy_date.defaultDate || that.$refs.buy_date.defaultdate
+				// debugger
 				order.purchaseDate = order.purchaseDate + "-01 00:00:00";
 				console.log('order.purchaseDate: -------- ' + order.purchaseDate)
 				order.purchasePlace = this.$refs.buyPosition.defaultText

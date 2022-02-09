@@ -2,7 +2,7 @@
 	<view class="content">
 		<home v-if="currentTabBarIndex == 0" ref="childHome"></home>
 		<order v-if="currentTabBarIndex == 1"></order>
-		<my v-if="currentTabBarIndex == 2" ref="my" @logout="setMaster"></my>
+		<my v-if="currentTabBarIndex == 2" ref="mys" @logout="setMaster"></my>
 		<view class="tab-bar">
 			<view class="tab-bar-content " :class="{'master-menu': isMaster}">
 				<view class="tab-bar-item" v-for="(item, index) in tabBar.list" :key="index" :class="{'tab-active': currentTabBarIndex == index}"
@@ -78,9 +78,46 @@
 		onShow() {
 			this.setMaster()
 			var that = this;
-			this.$websocket.addHandle('index',that.orderSocketHandle)
-			// debugger
-			this.$refs.my.updateUserInfo()
+			// this.$websocket.addHandle('index',that.orderSocketHandle)
+			// this.$refs.my.updateUserInfo()
+
+			that.$websocket.addHandle('index',that.orderSocketHandle)
+	
+			let userInfo = this.$userInfo.getUserInfo()
+			if (userInfo) {
+				this.userInfo = userInfo
+			} else {
+				this.userInfo = {
+					loginStatus: false,
+					phone: '',
+					username: ''
+				}
+				uni.navigateTo({
+					url: '/pages/my/login/login',
+				})
+			}
+			// 判断是否为店长
+			let roles = this.userInfo.roles;
+			this.isShopOwner = false;
+			if (roles) {
+				for (let i = 0; i < roles.length; i ++) {
+					let role = roles[i];
+					if (role.name == 'ROLE_SHOPOWNER') {
+						this.isShopOwner = true;
+					}
+				}
+			}
+	
+	
+			// that.$refs.mys.updateUserInfo()
+			// that.$refs.mys.updateUserInfo().then(() => {
+				
+			// }).catch(() => {
+			// 	uni.navigateTo({
+			// 		url: '/pages/my/login/login',
+			// 	})
+			// })
+			// this.$msg.showToast("请先登录")
 		},
 		methods: {
 			setMaster() {

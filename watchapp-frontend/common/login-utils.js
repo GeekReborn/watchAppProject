@@ -7,13 +7,17 @@ const CLIENT_SECRET = '123456'
 
 function checkTokenValidity() {
 	var userInfo = UserInfoUtils.getUserInfo()
+	// debugger
 	return new Promise((resolve, reject) => {
 		if (userInfo && userInfo.expiresIn && userInfo.lastLoginDatetime) {
 			console.log('expiresIn check')
 			let currentDatetime = new Date().getTime()
 			let lastLoginDatetime = new Date(userInfo.lastLoginDatetime).getTime()
-			
-			if (currentDatetime - (userInfo.expiresIn * 1000) > lastLoginDatetime) {
+			// let asda = lastLoginDatetime
+			// let asd = currentDatetime - (userInfo.expiresIn * 1000)
+			// let aa = asd - asda
+			// debugger
+			if (currentDatetime + (userInfo.expiresIn * 1000) > lastLoginDatetime) {
 				console.log('token expire')
 				// openLoginPage()
 				// reject(refreshAccessToken())
