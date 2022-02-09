@@ -21,9 +21,19 @@ public class SysShopCustomDAOImpl implements SysShopCustomDAO, Constants {
     @Override
     public List<SysShopDTO> findListOrder(String order, BigDecimal latitude, BigDecimal longitude, Pageable pageable) {
         StringBuffer sql = new StringBuffer();
-        sql.append("    select ss.id,ss.name, ss.location_text,ss.info, ss.favorable_rate, ss.shop_image,   ");
+//        sql.append("    select ss.id,ss.name, ss.location_text,ss.info, ss.favorable_rate, ss.shop_image,   ");
+        sql.append("    select ss.id,ss.name, ss.location_text,ss.info, ss.shop_image,   ");
         sql.append("          ss.latitude,ss.longitude, ss.create_by, ss.create_datetime, ss.last_update_by, ");
         sql.append("          ss.last_update_datetime, ss.del_status,   ");
+        sql.append("        FORMAT((SELECT\n" +
+                "IFNULL(sum( CASE WHEN se.star = 5 THEN 1 ELSE 0 END )* 1.0 / count(*) * 100,0) AS haoping\n" +
+                "FROM\n" +
+                "sys_evaluation se \n" +
+                "LEFT JOIN sys_order so ON se.order_id = so.id \n" +
+                "LEFT JOIN sys_shop sss ON so.shop_id = sss.id\n" +
+                "WHERE\n" +
+                "sss.id = ss.id\n" +
+                "),0) as favorable_rate,   ");
         sql.append("          round(6378.138 * 2 * asin( ");
         sql.append(" 			sqrt( ");
         sql.append(" 				pow(sin((:latitude * pi() / 180 - ss.latitude * pi()/180) / 2), 2) ");
@@ -32,12 +42,14 @@ public class SysShopCustomDAOImpl implements SysShopCustomDAO, Constants {
         sql.append(" 		       		* pow(sin( (:longitude * pi() / 180 - ss.longitude * pi() / 180) / 2), 2) ");
         sql.append(" 		    )     ");
         sql.append(" 		) * 1000) as distance, ");
-        sql.append(" 		su.id AS shop_manager_id, su.username AS shop_manager_name,su.phone AS shop_contact    ");
+//        sql.append(" 		su.id AS shop_manager_id, su.username AS shop_manager_name,su.phone AS shop_contact    ");
+        sql.append(" 		su.id AS shop_manager_id, su.username AS shop_manager_name,su.phone AS shop_contact,    ");
+        sql.append(" 		(SELECT count(*) FROM sys_order WHERE order_step = '8') as order_count       ");
         sql.append("     from sys_shop ss    ");
         sql.append("     LEFT JOIN sys_shop_user ssu ON ssu.shop_id = ss.id    ");
         sql.append("     LEFT JOIN sys_user su ON su.id = ssu.user_id    ");
         sql.append("     LEFT JOIN sys_role_user sru ON su.id = sru.user_id   ");
-        sql.append("     AND sru.role_id = 4    ");
+//        sql.append("     AND sru.role_id = 4    ");
         sql.append("     where IFNULL(ss.del_status,1) = 0      ");
         sql.append("     AND (sru.role_id = 4 AND su.id is not null)  ");
 
@@ -75,7 +87,8 @@ public class SysShopCustomDAOImpl implements SysShopCustomDAO, Constants {
         sql.append("    select ss.id,ss.name, ss.location_text,ss.info, ss.favorable_rate, ss.shop_image,   ");
         sql.append("          ss.latitude,ss.longitude, ss.create_by, ss.create_datetime, ss.last_update_by, ");
         sql.append("          ss.last_update_datetime, ss.del_status,   ");
-        sql.append("     0 as distance, su.id AS shop_manager_id, su.username AS shop_manager_name, su.phone AS shop_contact    ");
+        sql.append("     0 as distance, su.id AS shop_manager_id, su.username AS shop_manager_name, su.phone AS shop_contact,    ");
+        sql.append("     (SELECT count(*) FROM sys_order WHERE order_step = '8' and shop_id = :shopId ) as order_count    ");
         sql.append("     from sys_shop ss    ");
         sql.append("     LEFT JOIN sys_shop_user ssu ON ssu.shop_id = ss.id    ");
         sql.append("     LEFT JOIN sys_user su ON su.id = ssu.user_id    ");

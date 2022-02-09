@@ -35,5 +35,6 @@ public class SysShopDTO implements Serializable {
     private String shopManagerName;
     private String shopContact;
     private Integer distance;
+    private Integer orderCount;
 
 }

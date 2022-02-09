@@ -18,6 +18,7 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 
 // 端点
@@ -28,9 +29,9 @@ public class WebSocketController implements Constants {
 
     //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
     private static AtomicInteger onlineCount = new AtomicInteger(0);
-//    //concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。
-//    private static CopyOnWriteArraySet<WebSocketController> webSocketSetCustomer = new CopyOnWriteArraySet<WebSocketController>();
-//    private static CopyOnWriteArraySet<WebSocketController> webSocketSetMaster = new CopyOnWriteArraySet<WebSocketController>();
+    //concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。
+    private static CopyOnWriteArraySet<WebSocketController> webSocketSetCustomer = new CopyOnWriteArraySet<WebSocketController>();
+    private static CopyOnWriteArraySet<WebSocketController> webSocketSetMaster = new CopyOnWriteArraySet<WebSocketController>();
 
     //concurrent包的线程安全Map，用来存放每个客户端对应的MyWebSocket对象。key值是用户id
     private static ConcurrentHashMap<Integer, WebSocketController> webSocketMap = new ConcurrentHashMap<>();
